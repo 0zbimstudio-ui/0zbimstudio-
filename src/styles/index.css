@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+/* ============================================
+   0ZBIMSTUDIO — PREMIUM ARCHITECTURAL DESIGN SYSTEM
+   ============================================ */
+
+:root {
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-heading: 'DM Sans', 'Inter', sans-serif;
+
+  /* Color Palette — Architectural */
+  --color-bg: #FAFAF8;
+  --color-bg-warm: #F5F4F0;
+  --color-bg-dark: #1A1A18;
+  --color-bg-charcoal: #131312;
+
+  --color-ink: #1A1A18;
+  --color-ink-80: #2E2E2C;
+  --color-ink-60: #4A4A47;
+  --color-ink-40: #7A7A76;
+  --color-ink-20: #C0BFB8;
+  --color-ink-10: #E4E3DE;
+  --color-ink-5: #F0EFEA;
+
+  /* The ONE accent — muted slate-blue/sage. Used sparingly. */
+  --color-accent: #4A6741;
+  --color-accent-light: rgba(74, 103, 65, 0.08);
+  --color-accent-mid: rgba(74, 103, 65, 0.2);
+
+  /* Concrete/stone textures */
+  --color-concrete: #D8D6CE;
+  --color-concrete-dark: #A09E96;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Typography ── */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Section labels — small uppercase tracking */
+.label-sm {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-40);
+}
+
+/* ── Layout Utilities ── */
+
+.site-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* ── Section Divider ── */
+.section-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--color-ink-10);
+}
+
+/* ── Buttons ── */
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--color-ink);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-dark:hover {
+  background-color: var(--color-ink-80);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--color-ink-20);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-ink);
+  background-color: var(--color-ink-5);
+}
+
+.btn-dark-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--color-bg);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-dark-inverse:hover {
+  background-color: var(--color-ink-10);
+}
+
+.btn-outline-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background-color: transparent;
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-outline-inverse:hover {
+  border-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-ink-20); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-40); }
+
+/* ── Selection ── */
+::selection {
+  background: var(--color-accent-mid);
+  color: var(--color-ink);
+}
+
+/* ── Fade-in Animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Responsive Grids ── */
+
+/* About */
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Services */
+@media (min-width: 900px) {
+  .service-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Principles */
+@media (min-width: 640px) {
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Projects */
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Founder */
+@media (min-width: 900px) {
+  .founder-grid {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+}
+
+/* Contact */
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Footer */
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+/* Mobile overflow fix */
+@media (max-width: 639px) {
+  .site-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
